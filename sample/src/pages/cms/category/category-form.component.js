@@ -4,7 +4,7 @@ import { Form, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import * as Yup from "yup";
 import Select from 'react-select'
-import { getAllParents } from "../../../services/category.servce";
+import { getAllParents } from "../../../services/category.service";
 const CategoryForm = ({ data, formAction }) => {
     const validationSchema = Yup.object().shape({
         name: Yup.string().required("Name is required"),

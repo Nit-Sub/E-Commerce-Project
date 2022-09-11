@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
-import { getCategoryById } from "../../../services/category.servce";
+import { getCategoryById } from "../../../services/category.service";
 
 import CategoryForm from "./category-form.component";
 

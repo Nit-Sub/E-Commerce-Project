@@ -1,9 +1,9 @@
-import CategoryList from "./category-list.page";
-import CategoryCreate from "./category-create.page";
-import CategoryEdit from "./category-edit.page";
-const Category={
-    CategoryList,
-    CategoryCreate,
-    CategoryEdit
+import ProductList from "./product-list.page";
+import ProductCreate from "./product-create.page";
+import ProductEdit from "./product-edit.page";
+const Product={
+    ProductList,
+    ProductCreate,
+    ProductEdit
 }
-export default Category;
+export default Product;

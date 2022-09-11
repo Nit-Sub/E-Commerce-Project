@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
-import { createCategory } from "../../../services/category.servce";
-import CategoryForm from "./category-form.component";
+import { createProduct } from "../../../services/product.service";
+import ProductForm from "./product-form.component";
 
 
-const CategoryCreate = () => {
+const ProductCreate = () => {
     let default_value = {
         name: '',
       
@@ -15,13 +15,13 @@ const CategoryCreate = () => {
         image: '',
     }
     let navigate= useNavigate();
-    const addCategory=async (data)=>{
+    const addProduct=async (data)=>{
         try{
-            let response= await createCategory(data);
+            let response= await createProduct(data);
              // api link nagareko bhayera response ko kunnei kaam garira rako chaina
              if ( !response.status){
                 toast.success(response.msg)
-                navigate("/admin/category");
+                navigate("/admin/product");
              } 
 
         
@@ -37,7 +37,7 @@ const CategoryCreate = () => {
     return (<>
         <div className="container-fluid px-4">
             <AdminBreadCrumbs
-                content={"category"}
+                content={"product"}
                 type="create"
 
 
@@ -45,9 +45,9 @@ const CategoryCreate = () => {
             <div class="card mb-4">
                 <div class="card-body">
 
-                    <CategoryForm
+                    <ProductForm
                         data={default_value} 
-                        formAction={addCategory}/>
+                        formAction={addProduct}/>
 
                 </div>
             </div>
@@ -57,5 +57,5 @@ const CategoryCreate = () => {
 
     </>)
 }
-export default CategoryCreate;
+export default ProductCreate;
 

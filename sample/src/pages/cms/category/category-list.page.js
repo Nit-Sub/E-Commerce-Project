@@ -1,7 +1,7 @@
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
 import DataTable from 'react-data-table-component';
 import { useEffect, useState } from "react";
-import { deleteCategoryById, getCategoryById ,getAllCategories} from "../../../services/category.servce";
+import { deleteCategoryById, getCategoryById ,getAllCategories} from "../../../services/category.service";
 import { Badge } from "react-bootstrap";
 import { ucFirst } from "../../../helpers/function";
 import ActionButtons from "../action_btns.component";

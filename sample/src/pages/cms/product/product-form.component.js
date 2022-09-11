@@ -4,8 +4,8 @@ import { Form, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import * as Yup from "yup";
 import Select from 'react-select'
-import { getAllParents } from "../../../services/category.servce";
-const CategoryForm = ({ data, formAction }) => {
+import { getAllParents } from "../../../services/category.service";
+const ProductForm = ({ data, formAction }) => {
     const validationSchema = Yup.object().shape({
         name: Yup.string().required("Name is required"),
 
@@ -104,7 +104,7 @@ const CategoryForm = ({ data, formAction }) => {
 
                     <Form.Control
                         name="name"
-                        placeholder="Enter  Category name.."
+                        placeholder="Enter  Product name.."
                         size="sm"
                         value={formik.values.name}
                         onChange={formik.handleChange}
@@ -116,7 +116,7 @@ const CategoryForm = ({ data, formAction }) => {
                 </Col>
             </Form.Group>
             <Form.Group className="row mb-3">
-                <Form.Label className='col-sm-3'> Parent Category:</Form.Label>
+                <Form.Label className='col-sm-3'> Parent Product:</Form.Label>
                 <Col sm={9}>
                     <Form.Select
                         name="parent_cat"
@@ -250,4 +250,4 @@ const CategoryForm = ({ data, formAction }) => {
 
     </>)
 }
-export default CategoryForm;
+export default ProductForm;

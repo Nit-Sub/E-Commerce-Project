@@ -1,19 +1,19 @@
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
 import DataTable from 'react-data-table-component';
 import { useEffect, useState } from "react";
-import { deleteCategoryById, getCategoryById ,getAllCategories} from "../../../services/category.servce";
+import { deleteProductById, getProductById ,getAllProducts} from "../../../services/product.service";
 import { Badge } from "react-bootstrap";
 import { ucFirst } from "../../../helpers/function";
 import ActionButtons from "../action_btns.component";
 // import { toast } from "react-toastify";
-const CategoryList = () => {
-    const deleteCategory=async (id)=>{
+const ProductList = () => {
+    const deleteProduct=async (id)=>{
         // try{
-        //     let result=  await deleteCategoryById();
+        //     let result=  await deleteProductById();
         //     {
         //     //     if (response.status){
         //     //         toast.success(result.msg) // Api intregration pachi balla login ko valication check garera comment hatauney
-        //     //         getAllCategories();
+        //     //         getAllProducts();
         //     //     }
         //     // }
         // }
@@ -54,15 +54,15 @@ const CategoryList = () => {
             selector: row => 
             <ActionButtons
             id={row._id}
-            deleteAction={deleteCategory}
-            editUrl={"/admin/category/"+row._id}/>,  
+            deleteAction={deleteProduct}
+            editUrl={"/admin/product/"+row._id}/>,  
         },
     ];
     
     const [data, setData] = useState();
-    const getAllCategoriesDetail=async()=>{
+    const getAllProductsDetail=async()=>{
         try{
-            let response= await getAllCategories();
+            let response= await getAllProducts();
             if (response){
                 setData(response.result)
             }
@@ -75,15 +75,15 @@ const CategoryList = () => {
 
 
     useEffect(()=>{
-        getAllCategoriesDetail();
+        getAllProductsDetail();
 
     },[])
     return (<>
         <div className="container-fluid px-4">
             <AdminBreadCrumbs
-                content={"category"}
+                content={"product"}
                 type={"list"}
-                createLink='/admin/category/create'
+                createLink='/admin/product/create'
             />
             <div class="card mb-4">
                 <div class="card-body">
@@ -102,5 +102,5 @@ const CategoryList = () => {
 
     </>)
 }
-export default CategoryList;
+export default ProductList;
 

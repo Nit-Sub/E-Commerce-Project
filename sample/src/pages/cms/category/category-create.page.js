@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
-import { createCategory } from "../../../services/category.servce";
+import { createCategory } from "../../../services/category.service";
 import CategoryForm from "./category-form.component";
 
 

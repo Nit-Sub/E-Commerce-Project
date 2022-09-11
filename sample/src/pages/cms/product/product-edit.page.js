@@ -2,29 +2,29 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
-import { getCategoryById } from "../../../services/category.servce";
+import { getProductById } from "../../../services/product.service";
 
-import CategoryForm from "./category-form.component";
+import ProductForm from "./product-form.component";
 
 
-const CategoryEdit = () => {
+const ProductEdit = () => {
     let [default_value, setDefaultValues] = useState({
         title: '',
         link: '',
         status: '',
-        type: "category",
+        
         image: '',
     });
      let params = useParams();
     let navigate = useNavigate();
-    const editCategory = async (data) => {
+    const editProduct = async (data) => {
         try {
             let response=''
             // let response = await updateLabel(data,params.id);
             // api link nagareko bhayera response ko kunnei kaam garira rako chaina
             if (response.status) {
                 toast.success(response.msg)
-                navigate("/admin/category");
+                navigate("/admin/product");
             }
 
 
@@ -36,10 +36,10 @@ const CategoryEdit = () => {
             console.log("Edit Submit Error", error)
         }
     }
-    const getCategoryDetailById = async () => {
+    const getProductDetailById = async () => {
         try {
             let id = params.id;
-            let result = await getCategoryById(id);
+            let result = await getProductById(id);
             if (result) {
 
                 setDefaultValues(result.result)
@@ -51,13 +51,13 @@ const CategoryEdit = () => {
         }
     }
     useEffect(() => {
-        getCategoryDetailById();
+        getProductDetailById();
     }, [])
 
     return (<>
         <div className="container-fluid px-4">
             <AdminBreadCrumbs
-                content={"category"}
+                content={"product"}
                 type="Edit"
 
 
@@ -65,9 +65,9 @@ const CategoryEdit = () => {
             <div class="card mb-4">
                 <div class="card-body">
 
-                    <CategoryForm
+                    <ProductForm
                         data={default_value}
-                        formAction={editCategory} />
+                        formAction={editProduct} />
 
                 </div>
             </div>
@@ -77,5 +77,5 @@ const CategoryEdit = () => {
 
     </>)
 }
-export default CategoryEdit;
+export default ProductEdit;
 
