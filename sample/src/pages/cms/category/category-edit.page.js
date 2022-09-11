@@ -2,29 +2,29 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
-import {  getLabelById ,updateLabel} from "../../../services/label.service";//{createLabel baki cha lina}
-import BannerForm from "./banner-form.component";
+import { getCategoryById } from "../../../services/category.servce";
+
+import CategoryForm from "./category-form.component";
 
 
-
-const BannerEdit = () => {
+const CategoryEdit = () => {
     let [default_value, setDefaultValues] = useState({
         title: '',
         link: '',
         status: '',
-        type: "banner",
+        type: "category",
         image: '',
     });
      let params = useParams();
     let navigate = useNavigate();
-    const editBanner = async (data) => {
+    const editCategory = async (data) => {
         try {
             let response=''
             // let response = await updateLabel(data,params.id);
             // api link nagareko bhayera response ko kunnei kaam garira rako chaina
             if (response.status) {
                 toast.success(response.msg)
-                navigate("/admin/banner");
+                navigate("/admin/category");
             }
 
 
@@ -36,10 +36,10 @@ const BannerEdit = () => {
             console.log("Edit Submit Error", error)
         }
     }
-    const getElementById = async () => {
+    const getCategoryDetailById = async () => {
         try {
             let id = params.id;
-            let result = await getLabelById(id);
+            let result = await getCategoryById(id);
             if (result) {
 
                 setDefaultValues(result.result)
@@ -51,13 +51,13 @@ const BannerEdit = () => {
         }
     }
     useEffect(() => {
-        getElementById();
-    }, )//[] baki
+        getCategoryDetailById();
+    }, [])
 
     return (<>
         <div className="container-fluid px-4">
             <AdminBreadCrumbs
-                content={"banner"}
+                content={"category"}
                 type="Edit"
 
 
@@ -65,9 +65,9 @@ const BannerEdit = () => {
             <div class="card mb-4">
                 <div class="card-body">
 
-                    <BannerForm
+                    <CategoryForm
                         data={default_value}
-                        formAction={editBanner} />
+                        formAction={editCategory} />
 
                 </div>
             </div>
@@ -77,5 +77,5 @@ const BannerEdit = () => {
 
     </>)
 }
-export default BannerEdit;
+export default CategoryEdit;
 

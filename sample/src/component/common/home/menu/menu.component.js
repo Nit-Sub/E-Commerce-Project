@@ -9,7 +9,7 @@ const HomeMenu = () => {
 
 
 
-    const [dropdown, setDropDown] = useState(
+    const [dropdown] = useState(//setDropDown baki ch
         {
             title: "Categories",
             data: [
@@ -24,7 +24,7 @@ const HomeMenu = () => {
             ]
         }
     );
-    const [profileMenu, setProfileMenu] = useState(
+    const [profileMenu] = useState( // setProfileMenu baki cha
         {
             title: user?.name,
             data: [

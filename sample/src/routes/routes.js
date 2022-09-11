@@ -46,9 +46,19 @@ const RouterComponent=()=>{
       </Route>
     <Route path="/admin" element={<AdminLayout/>}>
       <Route index element={<AdminPages.AdminDashboard/>}/>
+      
       <Route path="banner" element={<AdminPages.Banner.BannerList/>}/>
       <Route path="banner/create" element={<AdminPages.Banner.BannerCreate/>}/>
       <Route path="banner/:id" element={<AdminPages.Banner.BannerEdit/>}/>
+      
+      <Route path="brand" element={<AdminPages.Brand.BrandList/>}/>
+      <Route path="brand/create" element={<AdminPages.Brand.BrandCreate/>}/>
+      <Route path="brand/:id" element={<AdminPages.Brand.BrandEdit/>}/>
+
+      <Route path="category" element={<AdminPages.Category.CategoryList/>}/>
+      <Route path="category/create" element={<AdminPages.Category.CategoryCreate/>}/>
+      <Route path="category/:id" element={<AdminPages.Category.CategoryEdit/>}/>
+      
       </Route>  
     </Routes>
     </BrowserRouter>

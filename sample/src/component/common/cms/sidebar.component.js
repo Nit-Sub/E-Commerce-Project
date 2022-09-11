@@ -13,17 +13,17 @@ const AdminSidebaar=()=>{
                                 Dashboard
                             </a>
                             <NavLink className="nav-link" to="/admin/banner">
-                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                <div className="sb-nav-link-icon"><i className="fas fa-images"></i></div>
                                 Banner Management
                             </NavLink>
-                            <a className="nav-link" href="index.html">
-                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                            <NavLink className="nav-link" to="/admin/brand">
+                                <div className="sb-nav-link-icon"><i className="fas fa-b"></i></div>
                                 Brand Management
-                            </a>
-                            <a className="nav-link" href="index.html">
-                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                            </NavLink>
+                            <NavLink className="nav-link" to="/admin/category">
+                                <div className="sb-nav-link-icon"><i className="fas fa-c"></i></div>
                                 Category Management
-                            </a>
+                            </NavLink>
                             <a className="nav-link" href="index.html">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Users Management

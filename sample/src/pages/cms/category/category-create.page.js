@@ -1,27 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
-import { createLabel } from "../../../services/label.service";
-import BannerForm from "./banner-form.component";
+import { createCategory } from "../../../services/category.servce";
+import CategoryForm from "./category-form.component";
 
 
-
-const BannerCreate = () => {
+const CategoryCreate = () => {
     let default_value = {
-        title: '',
-        link: '',
+        name: '',
+      
         status: '',
-        type: "banner",
+        parent_cat:'',
+        brands:'',
         image: '',
     }
     let navigate= useNavigate();
-    const addBanner=async (data)=>{
+    const addCategory=async (data)=>{
         try{
-            let response= await createLabel(data);
+            let response= await createCategory(data);
              // api link nagareko bhayera response ko kunnei kaam garira rako chaina
              if ( !response.status){
                 toast.success(response.msg)
-                navigate("/admin/banner");
+                navigate("/admin/category");
              } 
 
         
@@ -37,7 +37,7 @@ const BannerCreate = () => {
     return (<>
         <div className="container-fluid px-4">
             <AdminBreadCrumbs
-                content={"banner"}
+                content={"category"}
                 type="create"
 
 
@@ -45,9 +45,9 @@ const BannerCreate = () => {
             <div class="card mb-4">
                 <div class="card-body">
 
-                    <BannerForm
+                    <CategoryForm
                         data={default_value} 
-                        formAction={addBanner}/>
+                        formAction={addCategory}/>
 
                 </div>
             </div>
@@ -57,6 +57,5 @@ const BannerCreate = () => {
 
     </>)
 }
-export default BannerCreate;
-
+export default CategoryCreate;
 

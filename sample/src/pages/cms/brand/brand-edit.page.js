@@ -2,29 +2,28 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
-import {  getLabelById ,updateLabel} from "../../../services/label.service";//{createLabel baki cha lina}
-import BannerForm from "./banner-form.component";
+import { createLabel, getLabelById } from "../../../services/label.service";
+import BrandForm from "./brand-form.component";
 
 
-
-const BannerEdit = () => {
+const BrandEdit = () => {
     let [default_value, setDefaultValues] = useState({
         title: '',
         link: '',
         status: '',
-        type: "banner",
+        type: "brand",
         image: '',
     });
      let params = useParams();
     let navigate = useNavigate();
-    const editBanner = async (data) => {
+    const editBrand = async (data) => {
         try {
             let response=''
             // let response = await updateLabel(data,params.id);
             // api link nagareko bhayera response ko kunnei kaam garira rako chaina
             if (response.status) {
                 toast.success(response.msg)
-                navigate("/admin/banner");
+                navigate("/admin/brand");
             }
 
 
@@ -52,12 +51,12 @@ const BannerEdit = () => {
     }
     useEffect(() => {
         getElementById();
-    }, )//[] baki
+    }, [])
 
     return (<>
         <div className="container-fluid px-4">
             <AdminBreadCrumbs
-                content={"banner"}
+                content={"brand"}
                 type="Edit"
 
 
@@ -65,9 +64,9 @@ const BannerEdit = () => {
             <div class="card mb-4">
                 <div class="card-body">
 
-                    <BannerForm
+                    <BrandForm
                         data={default_value}
-                        formAction={editBanner} />
+                        formAction={editBrand} />
 
                 </div>
             </div>
@@ -77,5 +76,5 @@ const BannerEdit = () => {
 
     </>)
 }
-export default BannerEdit;
+export default BrandEdit;
 

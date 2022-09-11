@@ -39,7 +39,7 @@ export const deleteLabelById=async (id)=>{
 }
 export const updateLabel= async (data,id)=>{
     try{
-        let response = await httpPutRequest('/v1/label/'+id,true)
+        let response = await httpPutRequest('/v1/label/'+id,data,true,true)
         if  (response.status){
             return response;
         }

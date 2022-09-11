@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { Form, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import * as Yup from "yup";
-
-const BannerForm = ({ data, formAction }) => {
+const BrandForm = ({ data, formAction }) => {
     const validationSchema = Yup.object().shape({
         title: Yup.string().required("Title is required"),
         link: Yup.string().required("Link is required"),
@@ -44,7 +43,7 @@ const BannerForm = ({ data, formAction }) => {
             ...data}
         )
         
-    },[formik,data]);// formik hatauna parcha
+    },[data]);
 
     return (<>
         <Form onSubmit={formik.handleSubmit}>
@@ -56,7 +55,7 @@ const BannerForm = ({ data, formAction }) => {
 
                     <Form.Control
                         name="title"
-                        placeholder="Enter Banner title.."
+                        placeholder="Enter  Brand title.."
                         size="sm"
                         value={formik.values.title}
                         onChange={formik.handleChange}
@@ -73,7 +72,7 @@ const BannerForm = ({ data, formAction }) => {
                     <Form.Control
                         name="link"
                         type="url"
-                        placeholder="Enter Banner link.."
+                        placeholder="Enter Brand link.."
                         size="sm"
                         value={formik.values.link}
                         onChange={formik.handleChange}
@@ -167,4 +166,4 @@ const BannerForm = ({ data, formAction }) => {
 
     </>)
 }
-export default BannerForm;
+export default BrandForm;

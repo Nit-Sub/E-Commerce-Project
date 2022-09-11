@@ -1,20 +1,19 @@
 import AdminBreadCrumbs from "../../../component/common/cms/breadcrumbs";
 import DataTable from 'react-data-table-component';
 import { useEffect, useState } from "react";
-import {  getLabels } from "../../../services/label.service";
+import { deleteLabelById, getLabels } from "../../../services/label.service";
 import { Badge } from "react-bootstrap";
 import { ucFirst } from "../../../helpers/function";
 import ActionButtons from "../action_btns.component";
-//import { toast } from "react-toastify";
-
-const BannerList = () => {
-    const deletebanner=async (id)=>{
+// import { toast } from "react-toastify";
+const BrandList = () => {
+    const deleteBrand=async (id)=>{
         // try{
         //     let result=  await deleteLabelById();
         //     {
         //     //     if (response.status){
         //     //         toast.success(result.msg) // Api intregration pachi balla login ko valication check garera comment hatauney
-        //     //         getAllBanners();
+        //     //         getAllBrands();
         //     //     }
         //     // }
         // }
@@ -34,10 +33,7 @@ const BannerList = () => {
             selector: row => row.image,
             sortable : true,
         },
-        {
-            name: 'Link',
-            selector: row =><a href={row.link} target="_new">{row.link}</a>,
-        },
+    
         {
             name: 'Status',
             selector: row => <Badge bg={row.status ==='active'? 'success':'danger'}>{ucFirst(row.status)}</Badge>,
@@ -48,14 +44,14 @@ const BannerList = () => {
             selector: row => 
             <ActionButtons
             id={row._id}
-            deleteAction={deletebanner}
-            editUrl={"/admin/banner/"+row._id}/>,  
+            deleteAction={deleteBrand}
+            editUrl={"/admin/brand/"+row._id}/>,  
         },
     ];
     const [data, setData] = useState();
-    const getAllBanners=async()=>{
+    const getAllBrands=async()=>{
         try{
-            let response= await getLabels("banner");
+            let response= await getLabels("brand");
             if (response){
                 setData(response.result)
             }
@@ -68,15 +64,15 @@ const BannerList = () => {
 
 
     useEffect(()=>{
-        getAllBanners();
+        getAllBrands();
 
     },[])
     return (<>
         <div className="container-fluid px-4">
             <AdminBreadCrumbs
-                content={"banner"}
+                content={"brand"}
                 type={"list"}
-                createLink='/admin/banner/create'
+                createLink='/admin/brand/create'
             />
             <div class="card mb-4">
                 <div class="card-body">
@@ -95,5 +91,5 @@ const BannerList = () => {
 
     </>)
 }
-export default BannerList;
+export default BrandList;
 
