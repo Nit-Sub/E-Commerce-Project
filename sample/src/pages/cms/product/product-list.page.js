@@ -83,7 +83,7 @@ const ProductList = () => {
             <AdminBreadCrumbs
                 content={"product"}
                 type={"list"}
-                createLink='/admin/product/create'
+                createLink='/admin/products/create'
             />
             <div class="card mb-4">
                 <div class="card-body">
