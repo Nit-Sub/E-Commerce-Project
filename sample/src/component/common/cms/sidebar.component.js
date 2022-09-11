@@ -24,10 +24,10 @@ const AdminSidebaar=()=>{
                                 <div className="sb-nav-link-icon"><i className="fas fa-c"></i></div>
                                 Category Management
                             </NavLink>
-                            <a className="nav-link" href="index.html">
+                            <NavLink className="nav-link" to="/admin/product">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Users Management
-                            </a>
+                            </NavLink>
                             <a className="nav-link" href="index.html">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Product Management
