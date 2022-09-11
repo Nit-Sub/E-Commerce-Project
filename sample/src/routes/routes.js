@@ -58,6 +58,11 @@ const RouterComponent=()=>{
       <Route path="category" element={<AdminPages.Category.CategoryList/>}/>
       <Route path="category/create" element={<AdminPages.Category.CategoryCreate/>}/>
       <Route path="category/:id" element={<AdminPages.Category.CategoryEdit/>}/>
+
+      <Route path="product" element={<AdminPages.Product.ProductList/>}/>
+      <Route path="product/create" element={<AdminPages.Product.ProductCreate/>}/>
+      <Route path="product/:id" element={<AdminPages.Product.ProductEdit/>}/>
+      
       
       </Route>  
     </Routes>
