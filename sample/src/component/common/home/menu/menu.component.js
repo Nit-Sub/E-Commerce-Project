@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import {NavLink} from "react-router-dom"
 import DropDownMenu from "../../dropdown-menu/drop-down-component";
 import { useSelector } from "react-redux";
+import { getAllCategories } from "../../../../services/category.service";
 const HomeMenu = () => {
     const onExpand = () => {
     }
@@ -14,7 +15,7 @@ const HomeMenu = () => {
 
 
 
-    const [dropdown] = useState(//setDropDown baki ch
+    const [catDropdown, setCatDropdown] = useState(//setDropDown baki ch
         {
             title: "Categories",
             data: [
@@ -29,6 +30,35 @@ const HomeMenu = () => {
             ]
         }
     );
+    const getActiveMenu = async  ()=>{
+        try {
+            let menu_item = await getAllCategories ();
+            let cats_data = [];
+            if (menu_item.status){
+                menu_item.result.map((item)=>{
+                    if (item.status==='active'){
+                        cats_data.push({
+                            name:item.name,
+                            slug: item.slug
+                        })
+                    
+                    }
+                    setCatDropdown({
+                        ...catDropdown,
+                        data: cats_data
+                    })
+
+                })
+
+            }
+        }
+        catch(error){}
+    }
+    useEffect(()=>{
+
+        getActiveMenu();
+
+    },[])
     const [profileMenu] = useState( // setProfileMenu baki cha
         {
             title: user?.name,
@@ -53,6 +83,7 @@ const HomeMenu = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={onExpand} />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
+                        <DropDownMenu data={catDropdown} id="cats"></DropDownMenu>
                         <NavLink className="nav-link" to="/contact" >Conact Us</NavLink>
                        {
                         !user &&
@@ -61,7 +92,7 @@ const HomeMenu = () => {
                         <NavLink className="nav-link" to="/register">Register</NavLink>
                         </>
                        }
-                        <DropDownMenu data={dropdown} />
+                        <DropDownMenu data={catDropdown} />
                     </Nav>
                     <Nav className="me-auto">
                     <Nav>
