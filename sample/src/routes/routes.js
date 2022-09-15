@@ -44,11 +44,13 @@ const RouterComponent=()=>{
       <Route path="login" element={<FrontPage.LoginPage/>}></Route>
       <Route path ="category/:slug" element ={ <FrontPage.CategoryPage.CategoryDetailPage/> }></Route>
       <Route path="register" element={<FrontPage.RegisterPage/>}></Route>
+      <Route path ="contact" element={<FrontPage.Contactus/>}/>
       
       <Route path ="*" element ={ <ErrorPage/> }></Route>
       </Route>
     <Route path="/admin" element={<AdminLayout/>}>
       <Route index element={<AdminPages.AdminDashboard/>}/>
+      
       
       <Route path="banner" element={<AdminPages.Banner.BannerList/>}/>
       <Route path="banner/create" element={<AdminPages.Banner.BannerCreate/>}/>
