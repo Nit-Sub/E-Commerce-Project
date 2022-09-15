@@ -6,9 +6,8 @@ import { useSelector } from "react-redux";
 const HomeMenu = () => {
     const onExpand = () => {
     }
-    let counter=0;
-    useSelector((store=>{
-        counter=store.cart.count;
+    let counter=useSelector((store=>{
+        return store.cart.count;
     }))
 
     const user = JSON.parse(localStorage.getItem('loggedInUser'))?? null;

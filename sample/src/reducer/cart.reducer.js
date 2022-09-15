@@ -3,7 +3,7 @@ const initialState ={
     count:0,
     detail:[]
 }
-export const cart= createSlice ({
+export const Cart= createSlice ({
     name:"cart",
     initialState:{},
     reducers:{
@@ -15,4 +15,4 @@ export const cart= createSlice ({
 })
 
 export const {setCartCount}= Cart.actions;
-export default cart.reducer;
+export default Cart.reducer;
