@@ -2,9 +2,15 @@ import { useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import {NavLink} from "react-router-dom"
 import DropDownMenu from "../../dropdown-menu/drop-down-component";
+import { useSelector } from "react-redux";
 const HomeMenu = () => {
     const onExpand = () => {
     }
+    let counter=0;
+    useSelector((store=>{
+        counter=store.cart.count;
+    }))
+
     const user = JSON.parse(localStorage.getItem('loggedInUser'))?? null;
 
 
@@ -61,6 +67,9 @@ const HomeMenu = () => {
                         <DropDownMenu data={dropdown} />
                     </Nav>
                     <Nav className="me-auto">
+                    <Nav>
+            <NavLink className="nav-link" to ="/cart">Cart({counter})</NavLink>
+        </Nav>
                     {
                         // user &&<>
                         <DropDownMenu data={profileMenu} />

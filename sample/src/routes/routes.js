@@ -6,6 +6,8 @@ import AdminLayout from "../pages/layouts/admin-layout.page";
 import AdminPages from "../pages/cms";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import { Provider } from "react-redux";
+import store from "../store"
 //import {ROLES} from "../confi/constants"
 
 
@@ -34,6 +36,7 @@ const RouterComponent=()=>{
   return(
     <>
     <BrowserRouter>
+    <Provider  store={store}>
     <ToastContainer/>
     <Routes> 
     <Route path="/" element={<HomePageLayout/>}>   
@@ -66,6 +69,7 @@ const RouterComponent=()=>{
       
       </Route>  
     </Routes>
+    </Provider>
     </BrowserRouter>
     </>
   )

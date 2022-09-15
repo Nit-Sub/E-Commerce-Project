@@ -3,7 +3,8 @@ import {NavLink} from "react-router-dom";
 const DropDownMenu = ({data}) => {
     console.log(data);
     return (
-        
+        <>
+       
 
         <NavDropdown title={data.title} id="basic-nav-dropdown">
             {
@@ -17,6 +18,6 @@ const DropDownMenu = ({data}) => {
             }
             
             
-        </NavDropdown>)
+        </NavDropdown></>)
 }
 export default DropDownMenu;
