@@ -47,15 +47,13 @@ const HomeMenu = () => {
     return (<>
         <Navbar variant="dark" bg="dark" expand="sm">
             <Container fluid>
-                <Navbar.Brand href="/home" onClick={(e) => {
-                    e.preventDefault();
-                }}>
-                    E Home
-                </Navbar.Brand>
+                <NavLink to="/" className={"navbar-brand"} >
+                    Ecom
+                </NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={onExpand} />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <NavLink className="nav-link" to="/" >Home</NavLink>
+                        <NavLink className="nav-link" to="/contact" >Conact Us</NavLink>
                        {
                         !user &&
                         <>
