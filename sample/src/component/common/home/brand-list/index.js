@@ -1,6 +1,16 @@
 import { Col, Container, Row, Card, Button } from "react-bootstrap"
 import "../../../../assest/home.css"
+import {getLabels} from "../../../../services/label.service"
 export const BrandListComponent = () => {
+    let all_brands= async()=>{
+        try{
+            let response= await getLabels("brand")
+
+        }
+        catch(error){
+
+        }
+    }
     return (<>
 
         <Row className="mt-3 brand-title">
@@ -19,42 +29,7 @@ export const BrandListComponent = () => {
                     
                 </Card>
                 
-                </Col>
-                <Col>
-                <Card >
-                    <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
-                    
-                </Card>
-                
-                </Col>
-                <Col>
-                <Card >
-                    <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
-                    
-                </Card>
-                
-                </Col>
-                <Col>
-                <Card >
-                    <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
-                    
-                </Card>
-                
-                </Col>
-                <Col>
-                <Card >
-                    <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
-                    
-                </Card>
-                
-                </Col>
-                <Col>
-                <Card >
-                    <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
-                    
-                </Card>
-                
-                </Col>
+               </Col>
             </Row>
         </Container>
 
