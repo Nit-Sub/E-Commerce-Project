@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom"
 import { useEffect, useState } from "react"
 import "../../../../assest/home.css"
 import {getLabels} from "../../../../services/label.service"
-export const BrandListComponent = () => {
+export const CategoryListComponent = () => {
     let [brands , setBrands]= useState();
     let all_brands= async()=>{
         try{
@@ -52,7 +52,7 @@ export const BrandListComponent = () => {
         <Row className="mt-3 brand-title">
             <Col>
                 <h1 className="text-center">
-                    Brand Lists
+                    Category Lists
                 </h1>
             </Col>
         </Row>

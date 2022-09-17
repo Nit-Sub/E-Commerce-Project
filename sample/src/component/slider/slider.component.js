@@ -34,13 +34,13 @@ const SliderComponent = ({  }) => {// data lai probes lina parcha yesma
                         <a href="youtube.com">
                         <img
                             className="d-block w-100"
-                            src="https://image.shutterstock.com/image-vector/image-not-found-grayscale-photo-600w-1737334631.jpg" // src="process.env.REACT_APP_IMAGE_URL+'/uploads/+item.image"
+                            src="https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png" // src="process.env.REACT_APP_IMAGE_URL+'/uploads/+item.image"
                             alt="First slide"
                             height={300}
                         />
                         <Carousel.Caption>
                             <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <p> UnderDevelopment</p>
                         </Carousel.Caption>
                         </a>
                     </Carousel.Item>
