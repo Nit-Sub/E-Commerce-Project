@@ -2,9 +2,13 @@ import { Col, Container, Row, Card, Button } from "react-bootstrap"
 import "../../../../assest/home.css"
 import {getLabels} from "../../../../services/label.service"
 export const BrandListComponent = () => {
+    let [brands , setBrands]= useState();
     let all_brands= async()=>{
         try{
             let response= await getLabels("brand")
+            if(response.status){
+
+            }
 
         }
         catch(error){
