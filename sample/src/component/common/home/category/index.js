@@ -31,7 +31,7 @@ export const CategoryListComponent = () => {
 
             }
             let max_height = Math.max(...all_height);
-            let all_elms = document.getElementsByClassName('setHeight');
+            let all_elms = document.getElementsByClassName('height');
             if (all_elms) {
                 for (let i = 0; i < all_elms.length; i++) {
                     all_elms[i].style['min-height'] = max_height + 'px'
@@ -60,7 +60,7 @@ export const CategoryListComponent = () => {
         <Container fluid>
             <Row>
                 <Col sm={6} md={2} lg={2} className="mb-3 equal_height" >
-                    <Card className="setHeight">
+                    <Card className="height">
                         {/* <NavLink to = {`/brand/${item.slug}`}> */}
                         <NavLink to={(e) => e.preventDefault()}>
                             <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
@@ -78,7 +78,7 @@ export const CategoryListComponent = () => {
 
                 </Col>
                 <Col sm={6} md={2} lg={2} className="mb-3 equal_height">
-                    <Card className="setHeight">
+                    <Card className="height">
                         <NavLink to={(e) => e.preventDefault()}>
                             <Card.Img variant="top" src="https://assets.gadgets360cdn.com/pricee/assets/brand/og-philips-logo.png" />
                         </NavLink>
