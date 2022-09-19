@@ -38,7 +38,7 @@ export const BrandListComponent = () => {
                 }
             }
         }
-       
+    
 
 
     }
@@ -52,7 +52,7 @@ export const BrandListComponent = () => {
         <Row className="mt-3 brand-title">
             <Col>
                 <h1 className="text-center">
-                    Brand Lists
+                    BrandList
                 </h1>
             </Col>
         </Row>
