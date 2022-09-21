@@ -4,7 +4,8 @@ const SingleProductComponent = ({ detail }) => {
     return (
         <>
             <Card>
-                <NavLink to="/product/test">
+                <NavLink to="/product/test"> 
+                {/* product slug value pass garney need database connection */}
                     <Card.Img src="https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg">
                         {/* //<Card.Img src={process.env.REACT_APP_IMAGE_URL+'/uploads/'+detail.image[0]} style={maxHeight:255px}> */}
 
