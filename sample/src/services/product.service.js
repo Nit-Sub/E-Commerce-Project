@@ -26,6 +26,19 @@ export const getAllProducts=async ()=>{
     }
 }
 
+export const getAllFeaturedProducts=async ()=>{
+    try{
+        let response= await httpGetRequest('/v1/product/featured');
+        if  (response.status){
+            return response;
+        }
+        
+    }
+    catch(error){
+        console.log("Get Product Error",error)
+    }
+}
+
 
 export const deleteProductById=async (id)=>{
     try{

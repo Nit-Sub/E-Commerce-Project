@@ -50,6 +50,11 @@ const ProductList = () => {
             sortable: true
         },
         {
+            name: 'Is Featured',
+            selector: row =>row.is_featured?"Yes"  :"No",
+            sortable: true
+        },
+        {
             name: 'Action',
             selector: row => 
             <ActionButtons
