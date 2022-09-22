@@ -43,6 +43,7 @@ const RouterComponent=()=>{
       <Route index element={<FrontPage.LandingPage/>}></Route>
       <Route path="login" element={<FrontPage.LoginPage/>}></Route>
       <Route path ="category/:slug" element ={ <FrontPage.CategoryPage.CategoryDetailPage/> }></Route>
+      {/* <Route path ="product/:slug" element ={ <FrontPage.ProductDetailPage.ProductDetail/> }></Route> */}
       <Route path="register" element={<FrontPage.RegisterPage/>}></Route>
       <Route path ="contact" element={<FrontPage.Contactus/>}/>
       

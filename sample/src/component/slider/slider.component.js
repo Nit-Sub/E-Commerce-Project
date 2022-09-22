@@ -12,6 +12,7 @@ const SliderComponent = ({  }) => {// data lai probes lina parcha yesma
         //                     className="d-block w-100"
         //                     src="" // src="process.env.REACT_APP_IMAGE_URL+'/uploads/+item.image"
         //                     alt="First slide"
+        // onError ={shownoImage}
         //                 />
         //                 <Carousel.Caption>
         //                     <h3>First slide label</h3>
