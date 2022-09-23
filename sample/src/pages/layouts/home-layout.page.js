@@ -4,16 +4,17 @@ import { Outlet } from "react-router-dom"
 import HomeMenu from "../../component/common/home/menu/menu.component"
 import { setCartCount } from "../../reducer/cart.reducer";
 import "../../assest/home.css"
-const HomePageLayout=()=>{
-    const dispatch= useDispatch();
-    
-   
-        dispatch (setCartCount({product_id:1, qty : 3}))
+const HomePageLayout = () => {
+    const dispatch = useDispatch();
 
-   
-    return(<>
-    <HomeMenu/>
-    <Outlet/>
-    </>)}
+
+    dispatch(setCartCount({ product_id: 1, qty: 3 }))
+
+
+    return (<>
+        <HomeMenu />
+        <Outlet />
+    </>)
+}
 
 export default HomePageLayout;

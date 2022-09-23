@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 //import {Col} from "react-bootstrap"
-const SliderComponent = ({  }) => {// data lai probes lina parcha yesma
+const SliderComponent = ({ }) => {// data lai probes lina parcha yesma
     return (
         // data &&
         // <Carousel fade>
@@ -27,27 +27,27 @@ const SliderComponent = ({  }) => {// data lai probes lina parcha yesma
         // </Carousel>
 
 
-        
+
         <Carousel fade>
-            
-                
-                     <Carousel.Item >
-                        <a href="youtube.com">
-                        <img
-                            className="d-block w-100"
-                            src="https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png" // src="process.env.REACT_APP_IMAGE_URL+'/uploads/+item.image"
-                            alt="First slide"
-                            height={300}
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p> UnderDevelopment</p>
-                        </Carousel.Caption>
-                        </a>
-                    </Carousel.Item>
-                  
-                
-            
+
+
+            <Carousel.Item >
+                <a href="youtube.com">
+                    <img
+                        className="d-block w-100"
+                        src="https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png" // src="process.env.REACT_APP_IMAGE_URL+'/uploads/+item.image"
+                        alt="First slide"
+                        height={300}
+                    />
+                    <Carousel.Caption>
+                        <h3>First slide label</h3>
+                        <p> UnderDevelopment</p>
+                    </Carousel.Caption>
+                </a>
+            </Carousel.Item>
+
+
+
 
 
         </Carousel>

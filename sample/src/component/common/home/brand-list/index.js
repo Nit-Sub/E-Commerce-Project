@@ -1,52 +1,52 @@
-import { Col, Container, Row, Card} from "react-bootstrap"
-import {NavLink} from "react-router-dom"
+import { Col, Container, Row, Card } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 import { useEffect, useState } from "react"
 import "../../../../assest/home.css"
-import {getLabels} from "../../../../services/label.service"
+import { getLabels } from "../../../../services/label.service"
 export const BrandListComponent = () => {
-    let [brands , setBrands]= useState();
-    let all_brands= async()=>{
-        try{
-            let response= await getLabels("brand")
-            if(response.status){
-                let filtered = response.result.filter((item)=> item.status==='active');
+    let [brands, setBrands] = useState();
+    let all_brands = async () => {
+        try {
+            let response = await getLabels("brand")
+            if (response.status) {
+                let filtered = response.result.filter((item) => item.status === 'active');
                 setBrands(filtered)
 
             }
 
         }
-        catch(error){
+        catch (error) {
             // inception will handle
 
         }
     }
-    const setEqualHeights =()=>{
-        let elems= document.getElementsByClassName("equal_height");
-        let all_height=[];
-        if (elems){
-            for (let i=0 ; i< elems.length; i++){
+    const setEqualHeights = () => {
+        let elems = document.getElementsByClassName("equal_height");
+        let all_height = [];
+        if (elems) {
+            for (let i = 0; i < elems.length; i++) {
                 let first = elems[i];
                 all_height.push(Number(first.clientHeight));
 
 
             }
-            let max_height= Math.max(...all_height);
-            let all_elms= document.getElementsByClassName('height');
-            if (all_elms){
-                for (let i = 0; i < all_elms.length ; i++){
-                    all_elms[i].style['min-height']= max_height+'px'
+            let max_height = Math.max(...all_height);
+            let all_elms = document.getElementsByClassName('height');
+            if (all_elms) {
+                for (let i = 0; i < all_elms.length; i++) {
+                    all_elms[i].style['min-height'] = max_height + 'px'
                 }
             }
         }
-    
+
 
 
     }
-    useEffect (()=>{
+    useEffect(() => {
         all_brands();
         setEqualHeights();
-    },[])
-    
+    }, [])
+
     return (<>
 
         <Row className="mt-3 brand-title">
@@ -59,14 +59,14 @@ export const BrandListComponent = () => {
         <hr />
         <Container fluid>
             <Row>
-                <Col  sm={6} md={2} lg={2} className="mb-3 equal_height" >
-                <Card className="height">
-                    {/* <NavLink to = {`/brand/${item.slug}`}> */}
-                    <NavLink to={(e)=> e.preventDefault()}>
-                    <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
-                    </NavLink>
-                </Card>
-                {/* {
+                <Col sm={6} md={2} lg={2} className="mb-3 equal_height" >
+                    <Card className="height">
+                        {/* <NavLink to = {`/brand/${item.slug}`}> */}
+                        <NavLink to={(e) => e.preventDefault()}>
+                            <Card.Img variant="top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
+                        </NavLink>
+                    </Card>
+                    {/* {
                     brands && brands.map((item , index) => (
                         <Card >
                     <Card.Img variant="top" key={index} src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/06/apple.png?auto=format&q=60&fit=max&w=930" />
@@ -74,16 +74,16 @@ export const BrandListComponent = () => {
                 </Card>
                     ))
                 } */}
-                {/* src= {process.env.REACT_APP_IMAGE_URL +'uploads'+ item.images}     data base link garechi balla chalcha*/}
-                
-               </Col>
-               <Col sm={6} md={2} lg={2}  className="mb-3 equal_height">
-               <Card className="height">
-               <NavLink to={(e)=> e.preventDefault()}>
-                    <Card.Img variant="top" src="https://assets.gadgets360cdn.com/pricee/assets/brand/og-philips-logo.png" />
-                    </NavLink>
-                </Card>
-               </Col>
+                    {/* src= {process.env.REACT_APP_IMAGE_URL +'uploads'+ item.images}     data base link garechi balla chalcha*/}
+
+                </Col>
+                <Col sm={6} md={2} lg={2} className="mb-3 equal_height">
+                    <Card className="height">
+                        <NavLink to={(e) => e.preventDefault()}>
+                            <Card.Img variant="top" src="https://assets.gadgets360cdn.com/pricee/assets/brand/og-philips-logo.png" />
+                        </NavLink>
+                    </Card>
+                </Col>
             </Row>
         </Container>
 

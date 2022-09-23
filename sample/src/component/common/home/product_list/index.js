@@ -6,21 +6,21 @@ import { getAllFeaturedProducts } from "../../../../services/product.service";
 
 export const ProductListComponent = ({ product }) => {
     let [allProducts, setAllProducts] = useState();
-    const getAllProducts = useCallback(async ()=>{
+    const getAllProducts = useCallback(async () => {
         try {
             let response = await getAllFeaturedProducts();
-            if (response.status){
+            if (response.status) {
                 setAllProducts(response.result);
 
             }
         }
-        catch(error){
+        catch (error) {
 
         }
-    },[])
-     useEffect(()=>{ 
+    }, [])
+    useEffect(() => {
         getAllProducts();
-     },[getAllProducts])
+    }, [getAllProducts])
     return (
         <>
 
@@ -34,11 +34,11 @@ export const ProductListComponent = ({ product }) => {
             <Container fluid>
                 <Row>
                     {
-                        allProducts && allProducts.map((item, index)=>(
+                        allProducts && allProducts.map((item, index) => (
                             <Col sm={6} md={3} className="mb-4" key={index} >
-                            <SingleProductComponent 
-                            detail ={item}/>
-                        </Col>
+                                <SingleProductComponent
+                                    detail={item} />
+                            </Col>
                         ))
                     }
                     <Col sm={6} md={3} className="mb-4" >

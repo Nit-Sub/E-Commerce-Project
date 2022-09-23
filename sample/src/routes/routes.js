@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorPage from "../pages/front/error/404.error";
 import HomePageLayout from "../pages/layouts/home-layout.page";
 import FrontPage from "../pages/front";
@@ -32,48 +32,48 @@ import store from "../store"
 //   }
 // }
 
-const RouterComponent=()=>{
-  return(
+const RouterComponent = () => {
+  return (
     <>
-    <BrowserRouter>
-    <Provider  store={store}>
-    <ToastContainer/>
-    <Routes> 
-    <Route path="/" element={<HomePageLayout/>}>   
-      <Route index element={<FrontPage.LandingPage/>}></Route>
-      <Route path="login" element={<FrontPage.LoginPage/>}></Route>
-      <Route path ="category/:slug" element ={ <FrontPage.CategoryPage.CategoryDetailPage/> }></Route>
-      {/* <Route path ="product/:slug" element ={ <FrontPage.ProductDetailPage.ProductDetail/> }></Route> */}
-      <Route path="register" element={<FrontPage.RegisterPage/>}></Route>
-      <Route path ="contact" element={<FrontPage.Contactus/>}/>
-      
-      <Route path ="*" element ={ <ErrorPage/> }></Route>
-      </Route>
-    <Route path="/admin" element={<AdminLayout/>}>
-      <Route index element={<AdminPages.AdminDashboard/>}/>
-      
-      
-      <Route path="banner" element={<AdminPages.Banner.BannerList/>}/>
-      <Route path="banner/create" element={<AdminPages.Banner.BannerCreate/>}/>
-      <Route path="banner/:id" element={<AdminPages.Banner.BannerEdit/>}/>
-      
-      <Route path="brand" element={<AdminPages.Brand.BrandList/>}/>
-      <Route path="brand/create" element={<AdminPages.Brand.BrandCreate/>}/>
-      <Route path="brand/:id" element={<AdminPages.Brand.BrandEdit/>}/>
+      <BrowserRouter>
+        <Provider store={store}>
+          <ToastContainer />
+          <Routes>
+            <Route path="/" element={<HomePageLayout />}>
+              <Route index element={<FrontPage.LandingPage />}></Route>
+              <Route path="login" element={<FrontPage.LoginPage />}></Route>
+              <Route path="category/:slug" element={<FrontPage.CategoryPage.CategoryDetailPage />}></Route>
+              {/* <Route path ="product/:slug" element ={ <FrontPage.ProductDetailPage.ProductDetail/> }></Route> */}
+              <Route path="register" element={<FrontPage.RegisterPage />}></Route>
+              <Route path="contact" element={<FrontPage.Contactus />} />
 
-      <Route path="category" element={<AdminPages.Category.CategoryList/>}/>
-      <Route path="category/create" element={<AdminPages.Category.CategoryCreate/>}/>
-      <Route path="category/:id" element={<AdminPages.Category.CategoryEdit/>}/>
+              <Route path="*" element={<ErrorPage />}></Route>
+            </Route>
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminPages.AdminDashboard />} />
 
-      <Route path="products" element={<AdminPages.Product.ProductList/>}/>
-      <Route path="products/create" element={<AdminPages.Product.ProductCreate/>}/>
-      <Route path="products/:id" element={<AdminPages.Product.ProductEdit/>}/>
-      
-      
-      </Route>  
-    </Routes>
-    </Provider>
-    </BrowserRouter>
+
+              <Route path="banner" element={<AdminPages.Banner.BannerList />} />
+              <Route path="banner/create" element={<AdminPages.Banner.BannerCreate />} />
+              <Route path="banner/:id" element={<AdminPages.Banner.BannerEdit />} />
+
+              <Route path="brand" element={<AdminPages.Brand.BrandList />} />
+              <Route path="brand/create" element={<AdminPages.Brand.BrandCreate />} />
+              <Route path="brand/:id" element={<AdminPages.Brand.BrandEdit />} />
+
+              <Route path="category" element={<AdminPages.Category.CategoryList />} />
+              <Route path="category/create" element={<AdminPages.Category.CategoryCreate />} />
+              <Route path="category/:id" element={<AdminPages.Category.CategoryEdit />} />
+
+              <Route path="products" element={<AdminPages.Product.ProductList />} />
+              <Route path="products/create" element={<AdminPages.Product.ProductCreate />} />
+              <Route path="products/:id" element={<AdminPages.Product.ProductEdit />} />
+
+
+            </Route>
+          </Routes>
+        </Provider>
+      </BrowserRouter>
     </>
   )
 }
