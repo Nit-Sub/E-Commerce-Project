@@ -1,12 +1,16 @@
 function reverseNumber() {
 
-    let digit = 12345;
+    
     let reverse = 0;
-    let n = 0
-    while (n < 5) {
-        digit = n % 10
+ 
+    for (let i=0;i<5;i++){
+        digit = i % 10
         reverse = reverse * 10 + digit
+        i=i/10
+        
+        
     }
-    return reverse
+    console.log(reverse)
 
 }
+
