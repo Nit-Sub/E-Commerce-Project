@@ -24,19 +24,25 @@
  
 
  const stopCar=()=>{
+    
+    return new Promise((resolve , reject)=>{
     if(running){
         car_stop=true;
         console.log("Car is stopping...")
         running=false;
+        reject(true);
     }
     else{
         
         console.log("Car is not running");
+        resolve(true); 
         
-    }
- }
+    
+ }})}
 
- const endJourney=()=>{
+ const endJourney=async ()=>{
+    let break_applied=await stopCar();
+    
     if(car_stop){
         console.log("Journey Ended")
     }else{
