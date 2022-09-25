@@ -1,13 +1,19 @@
-let product=[{
-    name:"A",
-    price:1000,
-    discount:10
+const doSomething = () => {
+    return new Promise((resolve, reject) => {
+        let db = false;
+        if(db) {
+            resolve({
+                name: "Nitesh Subedi"
+            });
+        }
+        else {
+            reject("Erroe while executing")
 
-
-}]
-const calculateDiscount=(product)=>{
-    product.afterdiscount=product.price-(product.price*product.discount)/100
+        }
+    })
 
 }
-product.map(calculateDiscount)
-console.log(product)
+
+
+const result = doSomething();
+console.log(result)
