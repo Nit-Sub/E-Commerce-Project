@@ -70,3 +70,10 @@
 // console.log(Product_item)
 // Product_item.afterDiscount();
 // console.log(Product_item)
+
+const file =()=>{
+    
+}
+}
+
+
